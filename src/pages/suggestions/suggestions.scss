@@ -1,0 +1,28 @@
+﻿page-suggestions {
+  #e1 {display:inline-block}
+  #e2 {background-image: url('http://ngn-mag.com/image/wallpaper/fond-decran-blur-142.jpg');}
+  // #e2 {background-image: url('fond_3.jpg');}
+  #e3 {background-color: #e3ffee; ; opacity:0.3  ; margin: auto; width: 60%; border: 3px solid #8f8f8f ; padding: 10px}
+  #e4 {background-color: #e3ffee; ; opacity:0.3  ; margin: auto; width: 60%; border: 3px solid #8f8f8f ; padding: 10px}
+  #e5 {text-align: center; width: 100%;}
+  
+  
+  #card-stack {
+    width: 80%;
+    height: 60%;
+    background: #69717d;
+    border: 10px solid #607941;
+    margin: 0px auto 0;
+    position: relative;
+    // top: 150px;
+    //right: 350px;
+  }
+
+  #card-stack ion-card {
+    border-radius: 5px;
+    position: absolute;
+    text-align: center;
+    top: 3%;
+    height: 90%;
+  }
+}

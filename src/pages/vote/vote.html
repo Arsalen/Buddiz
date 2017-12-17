@@ -1,0 +1,87 @@
+﻿<!--
+  Generated template for the VotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+
+    <div style="display:inline-block" (click)="Accueil($event)">
+      <img  src="https://innovatorsrace50.com/uploads/e60944c8cb03e6821caff8fd4d6deba7/company_picture_18524_58ac738d2df16.png" width="40px"  height="40px"/>
+    </div>
+    <ion-title style="display:inline-block" >Vote</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="e1">
+
+<div id="e2">
+  <p>id: {{sortie.id}}</p>
+  <p>nom: {{sortie.nom}}</p>
+  <p>description: {{sortie.description}}</p>
+  <p>date: {{sortie.date}}</p>
+  <p>lieu: {{sortie.lieu}}</p>
+</div>
+
+  <div id="e3" *ngIf="q">
+    <flash-card>
+      <div class="flash-card-front">
+        <img id="e4" *ngIf="q.providersData[0]" src="{{q.providersData[0].copyrightImageSrc}}" />
+      </div>
+      <div class="flash-card-back">
+        <ion-label>carte Id: {{q._id}} </ion-label>
+        <ion-label>carte nom: {{q.detailedInformation.name}} </ion-label>
+        <ion-label>carte latitude: {{q.detailedInformation.latitude}} </ion-label>
+        <ion-label>carte longitude: {{q.detailedInformation.longitude}} </ion-label>
+      </div>
+    </flash-card>
+  </div>
+
+  <div>
+    <ion-slides id="e5">
+      <ion-slide *ngFor="let item of sortie.cartes">
+        <img (click)=" AjouterAuFavoris(item)" id="e6" *ngIf="item.providersData[0]" src="{{item.providersData[0].copyrightImageSrc}}" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div>
+
+    <ion-list [dragula]='"my-bag"' [dragulaModel]="sortie.favoris">
+      <button (click)="PlusDetails(item2)" id="e7" ion-item *ngFor="let item2 of sortie.favoris">
+
+        <ion-avatar item-left>
+          <img-loader *ngIf="item2.providersData[0]" [src]="item2.providersData[0].copyrightImageSrc" useImg [spinner]="false"></img-loader>
+        </ion-avatar>
+        <h4>id: {{item2._id}}</h4>
+        <p>nombre de photos assciées: {{item2.providersData.length}}</p>
+        <ion-avatar item-right>
+          <img-loader *ngIf="item2.providersData[0]" [src]="item2.providersData[0].copyrightImageSrc" useImg [spinner]="false"></img-loader>
+        </ion-avatar>
+
+      </button>
+    </ion-list>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-buttons text-center>
+    <button ion-button (click) = " Suggestions($event) " >
+      <ion-icon name="search"></ion-icon>
+    </button>
+
+    <button ion-button (click) = " Vote($event) " >
+      <ion-icon name="thumbs-up"></ion-icon>
+    </button>
+
+    <button ion-button (click) = " Synthese($event) " >
+      <ion-icon name="stats"></ion-icon>
+    </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>

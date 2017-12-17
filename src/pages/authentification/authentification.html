@@ -1,0 +1,79 @@
+﻿<!--
+  Generated template for the AuthentificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header align-title="center">
+
+    <ion-navbar id="e1">
+    <ion-title class="h2 title title_custom">Login/Register</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding id="e2">
+
+  <div *ngIf = "logged">
+    <img src="{{this.user.details.image}}" id="e3" />
+      <ion-label>nom :{{this.user.details.name}}</ion-label>
+    <ion-label>email :{{this.user.details.email}}</ion-label>
+    <ion-label>mot de passe :{{this.user.details.password}}</ion-label>
+    <ion-label>token :{{this.token}}</ion-label>
+    <button ion-button color="secondary" full (click)="doLogout()">Logout</button>
+  </div>
+
+
+<div *ngIf="!logged">
+  <div *ngIf="showLogin">
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button color="secondary" full (click)="doLogin()">Login</button>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button color="secondary" outline full (click)="showLogin = !showLogin">Créez un nouveau compte</button>
+    </ion-item>
+
+  </div>
+
+  <div *ngIf="!showLogin">
+
+    <ion-item>
+      <ion-input type="text" placeholder="Name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="url" placeholder="Paste url of your pic" [(ngModel)]="image"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button color="secondary" full (click)="doRegister()">Register</button>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button color="secondary" outline full (click)="showLogin = !showLogin">Vous avez dèjà un compte</button>
+    </ion-item>
+
+  </div>
+
+</div>
+
+  <button ion-button color="secondary" outline full (click)="status()">vérifier status</button>
+</ion-content>

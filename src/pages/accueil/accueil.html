@@ -1,0 +1,89 @@
+﻿<!--
+  Generated template for the BuddizPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle="left" left>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+
+    <div style="display:inline-block" (click)="Accueil($event)">
+      <img  src="https://innovatorsrace50.com/uploads/e60944c8cb03e6821caff8fd4d6deba7/company_picture_18524_58ac738d2df16.png" width="40px"  height="40px"/>
+    </div>
+      <ion-title style="display:inline-block">Accueil</ion-title>
+
+    <button ion-button menuToggle="right" right>
+      <ion-icon name="person"></ion-icon>
+    </button>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding id="e5">
+
+ <button ion-button color="secondary" large round block (click)="CriteriaModal()">Organiser une sortie</button>
+
+<ion-list>
+
+<ion-list-header id="e1">
+    Sorties passées
+</ion-list-header>
+<div *ngFor="let h of historiques">
+  <ion-item id="e2" *ngIf=" h.date < instant ">
+    <ion-thumbnail item-start>
+      <img *ngIf="h.cartes[0]" src="{{h.cartes[0].providersData[0].copyrightImageSrc}}">
+    </ion-thumbnail>
+    <p>id: {{h.id}} </p>
+    <h2>nom: {{h.nom}}</h2>
+    <p>date: {{h.date}} </p>
+    <p>lieu: {{h.lieu}} </p>
+    <button ion-button outline (click)="historique($event, h)" item-end>View</button>
+  </ion-item>
+</div>
+
+<ion-list-header id="e3">
+    Sorties à venir
+</ion-list-header>
+<div *ngFor="let h of historiques">
+  <ion-item *ngIf=" h.date > instant " id="e4" >
+    <ion-thumbnail item-start>
+      <img *ngIf="h.cartes[0]" src="{{h.cartes[0].providersData[0].copyrightImageSrc}}">
+    </ion-thumbnail>
+    <p>id: {{h.id}} </p>
+    <h2>nom: {{h.nom}}</h2>
+    <p>date: {{h.date}} </p>
+    <p>lieu: {{h.lieu}} </p>
+    <button ion-button outline (click)="historique($event, h)" item-end>View</button>
+  </ion-item>
+</div>
+
+</ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-buttons text-center>
+    <button ion-button (click) = " OptionsModal('Suggestions') " >
+      <ion-icon name="search"></ion-icon>
+    </button>
+
+    <button ion-button (click) = " OptionsModal('Vote') " >
+      <ion-icon name="thumbs-up"></ion-icon>
+    </button>
+
+    <button ion-button (click) = " OptionsModal('Synthese') " >
+      <ion-icon name="stats"></ion-icon>
+    </button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-footer>

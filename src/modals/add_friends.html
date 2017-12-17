@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ajouter amis</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="e1">
+
+<ion-list>
+<div *ngFor="let api of apis">
+  <button ion-button color="secondary" outline block>
+    <ion-thumbnail item-start>
+      <img  src="{{api.url}}" />
+    </ion-thumbnail>
+    <h2 item-end>{{api.nom}}</h2>
+  </button>
+</div>
+
+</ion-list>
+
+<button ion-button color="secondary" block (click)="closeModal()">Close</button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Ajouter amis</ion-title>
+  </ion-toolbar>
+</ion-footer>

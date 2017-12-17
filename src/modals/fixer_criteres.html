@@ -1,0 +1,48 @@
+﻿<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Fixer les critères de recherche</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="e1">
+
+  <ion-list inset>
+    <ion-item>
+      <ion-label>Nom de la sortie</ion-label>
+      <ion-input name="nom" [(ngModel)]="sortie.nom" type="text" placeholder="Nom de recherche"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input name="description" [(ngModel)]="sortie.description" type="text" placeholder="Quelques mots pour decrire votre recherche"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime name="date" [(ngModel)]="sortie.date" displayFormat="MMM DD, h:mm A"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-searchbar name="lieu" [(ngModel)]="sortie.lieu" placeholder="Lieu" (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of items">
+          <button ion-button color="secondary" block outline (click) = "sortie.lieu = item" > {{ item }} </button>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="secondary" block (click)="itemTapped($event)">Lancer!</button>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button color="secondary" block (click)="closeModal()">Close</button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Fixer les critères de recherche</ion-title>
+  </ion-toolbar>
+</ion-footer>

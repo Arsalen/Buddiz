@@ -1,0 +1,50 @@
+﻿<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<script src="details_proposition.ts"></script>
+<ion-header>
+  <ion-navbar>
+    <ion-title>Plus de détails</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="e1">
+
+  <div>
+
+    <p>id: {{carte._id}}</p>
+    <p>latitude: {{carte.detailedInformation.latitude}}</p>
+    <p>longitude: {{carte.detailedInformation.longitude}}</p>
+
+
+
+
+<ion-list>
+
+  <flash-card *ngFor="let item of plusdephotos">
+            <div class="flash-card-front">
+              <img id="e2" *ngIf="item.copyrightImageSrc"  src="{{item.copyrightImageSrc}}" />
+            </div>
+            <div class="flash-card-back">
+              <ion-label>elementName: {{item.elementName}} </ion-label>
+              <ion-label>elementId: {{item.elementId}} </ion-label>
+              <ion-label>providerName: {{item.providerName}} </ion-label>
+              <ion-label>lastUpdate: {{item.lastUpdate}} </ion-label>
+            </div>
+  </flash-card>
+
+</ion-list>
+
+  </div>
+
+  <button ion-button color="secondary" block (click)="closeModal()">Close</button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Plus de détails</ion-title>
+  </ion-toolbar>
+</ion-footer>

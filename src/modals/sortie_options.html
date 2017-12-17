@@ -1,0 +1,49 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>{{opt}}</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #F7FFED !important;">
+
+<ion-list>
+<button (click)="itemTapped($event, h)" id="e1" ion-item *ngFor="let h of hist" >
+
+<ion-avatar item-left>
+    <ion-row>
+      <ion-col>
+        <img-loader *ngIf="h.cartes[0]" [src]="h.cartes[0].providersData[0].copyrightImageSrc" useImg [spinner]="false">
+        </img-loader>
+      </ion-col>
+      <ion-col>
+        <p>{{h.date}}</p>
+        <p>{{h.lieu}}</p>
+      </ion-col>
+    </ion-row>
+</ion-avatar>
+<h4>{{h.nom}}</h4>
+<p>{{h.description}}</p>
+<ion-avatar item-right>
+    <img-loader *ngIf="h.cartes[0]" [src]="h.cartes[0].providersData[0].copyrightImageSrc" useImg [spinner]="false">
+    </img-loader>
+</ion-avatar>
+</button>
+</ion-list>
+
+<button ion-button block color="secondary" (click)="closeModal()">Close</button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>{{opt}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

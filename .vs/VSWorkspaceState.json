@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\components",
+    "\\src\\components\\flash-card",
+    "\\src\\pages",
+    "\\src\\pages\\accueil",
+    "\\src\\pages\\recherche",
+    "\\src\\pages\\suggestions",
+    "\\src\\pages\\votes"
+  ],
+  "SelectedNode": "\\src\\components\\flash-card\\flash-card.scss",
+  "PreviewInSolutionExplorer": false
+}
